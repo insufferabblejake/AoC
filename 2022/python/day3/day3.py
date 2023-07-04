@@ -21,7 +21,7 @@ def generate_priorities() -> None:
         priority = i - upper_a + 27
         priorities[char] = priority
 
-    print("Priorities:", priorities)
+    # print("Priorities:", priorities)
 
 
 def muck_in_rucksack(lines: list[str]) -> int:
@@ -38,8 +38,8 @@ def muck_in_rucksack(lines: list[str]) -> int:
 def main() -> None:
     generate_priorities()
     fpath = os.getcwd() + "/input.txt"
-    file = open(fpath, "r")
-    print(f"Sum of prios is {muck_in_rucksack(file.readlines())}")
+    with open(fpath, "r") as file:
+        print(f"Sum of prios is {muck_in_rucksack(file.readlines())}")
 
 
 if __name__ == '__main__':

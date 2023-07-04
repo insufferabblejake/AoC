@@ -9,7 +9,8 @@ def do_something(lines: list[str]) -> None:
 def main() -> None:
     fpath = os.getcwd() + "/input.txt"
     file = open(fpath, "r")
-    do_something(file.readlines())
+    with open(fpath, "r") as file:
+        do_something(file.readlines())
 
 
 if __name__ == '__main__':
